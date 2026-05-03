@@ -5,6 +5,6 @@ matplotlib==3.10.8
 statsmodels==0.14.6
 scikit-learn==1.8.0
 xgboost==3.2.0
-clearml==2.1.5
+clearml==2.1.6
 optuna==4.8.0
 clearml-agent==3.0.0

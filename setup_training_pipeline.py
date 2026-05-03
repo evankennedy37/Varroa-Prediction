@@ -28,6 +28,7 @@ pipe.add_step(
     name="data_processor",
     base_task_project="Varroa Prediction Pipeline",
     base_task_name="Data Processor",
+    execution_queue="default",
     parameter_override={
         "General/varroa_samples_path": "${pipeline.varroa_samples_path}",
         "General/yard_info_path": "${pipeline.yard_info_path}",
@@ -40,10 +41,14 @@ pipe.add_step(
     parents=["data_processor"],
     base_task_project="Varroa Prediction Pipeline",
     base_task_name="Model Fitter",
+    execution_queue="default",
     parameter_override={
         "General/upstream_id": "${data_processor.id}",
     }
 )
 
-pipe.start()
+pipe.create(
+    project_name="My Project",
+    task_name="My Pipeline"
+)
 print("Training pipeline registered successfully.")

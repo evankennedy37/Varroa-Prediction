@@ -9,7 +9,7 @@ upstream_id = task.get_parameter("General/upstream_id")
 classifier = Task.get_task(task_id=upstream_id).artifacts["trained_model"].get()
 
 #Getting params
-data_path = task.get_parameter("General/weather_data_path") or "/data/weather.csv"
+data_path = task.get_parameter("General/weather_path") or "/data/weather.csv"
 station_id = task.get_parameter("General/station_id") or 112250
 yard_density = task.get_parameter("General/yard_density") or 100
 yard_elevation = task.get_parameter("General/yard_elevation") or 500

@@ -6,7 +6,7 @@ task = Task.init(project_name="Varroa Prediction Pipeline", task_name="Predictor
 task.set_script(
     repository="https://github.com/evankennedy37/Varroa-Prediction",
     branch="main",
-    entry_point="steps/predictor.py"
+    entry_point="steps/varroa_predictor.py"
 )
 task.close()
 
@@ -25,6 +25,7 @@ pipe.add_step(
     name="predictor",
     base_task_project="Varroa Prediction Pipeline",
     base_task_name="Predictor",
+    execution_queue="default",
     parameter_override={
         "General/upstream_id": "${pipeline.trained_model_task_id}",
         "General/weather_path": "${pipeline.weather_path}",
@@ -36,5 +37,8 @@ pipe.add_step(
     }
 )
 
-pipe.start()
+pipe.create(
+    project_name="Varroa Prediction Pipeline",
+    task_name="Training Pipeline"
+)
 print("Prediction pipeline registered successfully.")

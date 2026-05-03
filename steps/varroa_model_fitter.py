@@ -6,7 +6,7 @@ task = Task.init(project_name="Varroa Prediction Pipeline", task_name="Model Fit
 #Getting tensors
 upstream_id = task.get_parameter("General/upstream_id")
 
-combined_binary = Task.get_task(task_id=upstream_id).artifacts["processed_data"].get()
+combined_binary = Task.get_task(task_id=upstream_id).artifacts["processed_tensors"].get()
 
 
 # %% [markdown]
