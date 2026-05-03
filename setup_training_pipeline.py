@@ -45,5 +45,5 @@ pipe.add_step(
     }
 )
 
-pipe.start(queue=None)
+pipe.start()
 print("Training pipeline registered successfully.")

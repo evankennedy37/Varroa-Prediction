@@ -36,5 +36,5 @@ pipe.add_step(
     }
 )
 
-pipe.start(queue=None)
+pipe.start()
 print("Prediction pipeline registered successfully.")
