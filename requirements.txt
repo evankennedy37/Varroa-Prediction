@@ -7,3 +7,4 @@ scikit-learn==1.8.0
 xgboost==3.2.0
 clearml==2.1.5
 optuna==4.8.0
+clearml-agent==3.0.0
