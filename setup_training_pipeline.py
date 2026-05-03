@@ -9,7 +9,7 @@ steps = [
 
 #Registering steps as template tasks
 for task_name, entry_point in steps:
-    task = Task.init(project_name="Varroa Prediction Pipeline", task_name=task_name)
+    task = Task.create(project_name="Varroa Prediction Pipeline", task_name=task_name)
     task.set_script(
         repository="https://github.com/evankennedy37/Varroa-Prediction",
         branch="main",
@@ -47,8 +47,4 @@ pipe.add_step(
     }
 )
 
-pipe.create(
-    project_name="My Project",
-    task_name="My Pipeline"
-)
 print("Training pipeline registered successfully.")

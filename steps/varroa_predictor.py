@@ -67,7 +67,7 @@ model_input = pd.DataFrame(columns = ['date_from','elevation', 'yard_density', '
 #Setting up dataframe w/o the weather data, to be joined with the weather data
 dates = pd.date_range(start=start_date, end=end_date, freq='D')
 for day in dates:
-    model_input.loc[len(model_input)] = [day, yard_density, yard_elevation, station_id]
+    model_input.loc[len(model_input)] = [day, yard_elevation, yard_density, station_id]
 
 # %%
 #Merging the dataframes to form the tensors

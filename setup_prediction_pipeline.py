@@ -2,7 +2,7 @@ from clearml import Task
 from clearml.automation import PipelineController
 
 #Registering predictor as a template task
-task = Task.init(project_name="Varroa Prediction Pipeline", task_name="Predictor")
+task = Task.create(project_name="Varroa Prediction Pipeline", task_name="Predictor")
 task.set_script(
     repository="https://github.com/evankennedy37/Varroa-Prediction",
     branch="main",
@@ -37,8 +37,4 @@ pipe.add_step(
     }
 )
 
-pipe.create(
-    project_name="Varroa Prediction Pipeline",
-    task_name="Training Pipeline"
-)
 print("Prediction pipeline registered successfully.")
